@@ -111,6 +111,6 @@ export const STAGE_MESSAGES = {
 } as const;
 
 /** Index (0-based) of the last success message before "Открыть файл" button. After this msg → button, then on click → photo + last msg */
-export const SUCCESS_OPEN_FILE_AFTER_MSG_IDX = 5;
+export const SUCCESS_OPEN_FILE_AFTER_MSG_IDX = 26;
 /** Message that introduces the code button — when it appears, show "Ввести код" button */
 export const INTRO_CODE_BUTTON_MSG = STAGE_MESSAGES.intro[5];
