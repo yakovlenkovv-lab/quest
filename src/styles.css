@@ -1,32 +1,33 @@
 /* ─── CSS Variables ─────────────────────────────────────────────────────────── */
 :root {
-  --bg-start: #0d0a1e;
-  --bg-mid: #150d2e;
-  --bg-end: #1a0a35;
-  --primary: #c084fc;
-  --primary-dim: rgba(192, 132, 252, 0.15);
-  --secondary: #f9a8d4;
-  --accent: #67e8f9;
-  --success: #86efac;
-  --danger: #fca5a5;
+  --bg-start: #0a0a0b;
+  --bg-mid: #111214;
+  --bg-end: #17181b;
 
-  --glass-bg: rgba(255, 255, 255, 0.04);
+  --primary: #f5f5f7;
+  --primary-dim: rgba(245, 245, 247, 0.08);
+  --secondary: #a1a1aa;
+  --accent: #8e8e93;
+  --success: #32d74b;
+  --danger: #ff453a;
+
+  --glass-bg: rgba(255, 255, 255, 0.045);
   --glass-bg-hover: rgba(255, 255, 255, 0.07);
   --glass-border: rgba(255, 255, 255, 0.09);
-  --glass-border-accent: rgba(192, 132, 252, 0.25);
+  --glass-border-accent: rgba(255, 255, 255, 0.14);
 
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
+  --text-primary: #f5f5f7;
+  --text-secondary: #b0b3b8;
+  --text-muted: #7c7f87;
 
   --radius-sm: 12px;
   --radius-md: 18px;
   --radius-lg: 24px;
   --radius-xl: 32px;
 
-  --shadow-glow: 0 0 24px rgba(192, 132, 252, 0.12);
-  --shadow-glow-strong: 0 0 40px rgba(192, 132, 252, 0.2);
-  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 24px rgba(255, 255, 255, 0.04);
+  --shadow-glow-strong: 0 0 40px rgba(255, 255, 255, 0.06);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.45);
 
   --font-sans: 'Open Sans', system-ui, -apple-system, sans-serif;
   --font-display: 'Open Sans', system-ui, sans-serif;
@@ -63,8 +64,9 @@ body {
   inset: 0;
   display: flex;
   flex-direction: column;
-  background: radial-gradient(ellipse at 30% 0%, #1e0a3e 0%, #0d0a1e 60%),
-              radial-gradient(ellipse at 80% 100%, #1a0535 0%, transparent 60%);
+  background:
+    radial-gradient(ellipse at 30% 0%, #1b1c20 0%, #0a0a0b 60%),
+    radial-gradient(ellipse at 80% 100%, #141519 0%, transparent 60%);
 }
 
 .main-content-with-code-btn {
@@ -79,7 +81,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(ellipse at 40% 20%, #1e0a3e 0%, #080612 70%);
+  background: radial-gradient(ellipse at 40% 20%, #1a1b1f 0%, #070708 70%);
   overflow: hidden;
 }
 
@@ -436,31 +438,36 @@ body {
   justify-content: flex-end;
 }
 
-.action-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 28px;
-  border-radius: var(--radius-lg) 0 var(--radius-lg) var(--radius-lg);
-  border: 1px solid rgba(192, 132, 252, 0.4);
-  background: linear-gradient(135deg, rgba(192, 132, 252, 0.25) 0%, rgba(249, 168, 212, 0.15) 50%, rgba(103, 232, 249, 0.08) 100%);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  color: #f5f0ff;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  box-shadow: 0 4px 20px rgba(192, 132, 252, 0.2), 0 1px 0 rgba(255, 255, 255, 0.1) inset;
-  font-family: var(--font-sans);
-  letter-spacing: 0.03em;
-  white-space: nowrap;
-  -webkit-tap-highlight-color: transparent;
-  user-select: none;
-  position: relative;
-  overflow: hidden;
+.action-btn,
+.fixed-code-btn,
+.modal-submit-btn {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.10) 0%,
+    rgba(255, 255, 255, 0.06) 50%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  color: #f5f5f7;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.28),
+    0 1px 0 rgba(255, 255, 255, 0.08) inset;
 }
 
+.action-btn:hover,
+.fixed-code-btn:hover,
+.modal-submit-btn:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.14) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.12) inset;
+}
 .action-btn::before {
   content: '';
   position: absolute;
@@ -832,7 +839,7 @@ body {
   position: relative;
   width: 100%;
   max-width: 440px;
-  background: linear-gradient(160deg, rgba(30, 15, 60, 0.97) 0%, rgba(15, 10, 35, 0.98) 100%);
+  background: linear-gradient(160deg, rgba(28, 29, 32, 0.97) 0%, rgba(16, 17, 19, 0.98) 100%);
   border: 1px solid var(--glass-border-accent);
   border-radius: var(--radius-xl);
   padding: 28px 32px;
